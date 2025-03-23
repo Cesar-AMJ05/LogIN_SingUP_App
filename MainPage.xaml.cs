@@ -49,18 +49,19 @@ namespace LogIN_SingUP_App
 
         // Verifica si el ususario y contraseña son correctos, en caso contrario se borra la contraseña ingresada,
         // se coloca nuevamente al usuario en la casilla yse vuelve a ocultar, ademas muestra un mensaje de advertencia
-        private void OnLogInClicked(object sender, EventArgs e)
+        private  void OnLogInClicked(object sender, EventArgs e)
         {
             if ((PasswordEntry.Text == password) & (TextUserEntry.Text == user)) // Agrega validación de usuario si es necesario
             {
                 Text_Warnings.IsVisible = false;
-                DisplayAlert("Éxito", "Inicio de sesión exitoso", "OK");
+                //DisplayAlert("Éxito", "Inicio de sesión exitoso", "OK");
+                Navigation.PushAsync(new AppMenu());
             }
             else
             {
                 Text_Warnings.IsVisible = true;
                 PasswordEntry.Text = null;              
-                DisplayAlert("Error", "Contraseña Incorrecta", "F");
+                //DisplayAlert("Error", "Contraseña Incorrecta", "F");
                 PasswordEntry.IsPassword = true;
                 TogglePasswordButton.Text = PasswordEntry.IsPassword ? "👁" : "👁‍🗨";
                 PasswordEntry.Focus();

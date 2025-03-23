@@ -3,10 +3,290 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LogIN_SingUP_App.SingUp_Page">
 
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- Estilo para Label -->
+            <Style TargetType="Label" x:Key="Titles">
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Pine_Vendereti}" 
+                                         Dark="{StaticResource CyberGreen}" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="32"/>
+                <Setter Property="CharacterSpacing" Value="9.5" />
+            </Style>
+
+            <!-- Estilo para Label2 -->
+            <Style TargetType="Label" x:Key="Subtitles">
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Pine_Vendereti}" 
+                                         Dark="{StaticResource CyberGreen}" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="CharacterSpacing" Value="10" />
+                <Setter Property="HorizontalOptions" Value="Start"/>
+            </Style>
+
+            <!--Estilo para labels de advertancia-->
+            <Style TargetType="Label" x:Key="Warnings">
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Magenta}"
+                                         Dark="{StaticResource Flourecnt_Vendereti}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+            <!-- Estilo para Image -->
+            <Style TargetType="Image" x:Key="Icon">
+                <Setter Property="Source">
+                    <Setter.Value>
+                        <AppThemeBinding Light="log_in_light.png" 
+                                         Dark="log_in_dark.png" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--Estilo de frame-->
+            <Style TargetType="Border" x:Key="Entrys">
+                <Setter Property="BackgroundColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Gray200Brush}"
+                                            Dark="{StaticResource Gray900Brush}" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Padding" Value="1,5"/>
+                <Setter Property="StrokeShape" Value="RoundRectangle 15"/>
+                <Setter Property="Stroke">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Tertiary}"
+                                         Dark="{StaticResource Gray100}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="WidthRequest" Value="500"/>
+            </Style>
+
+            <!--Estilo Entradas Usuario-->
+            <Style TargetType="Entry" x:Key="User">
+                <Setter Property="Placeholder" Value="User Name..."/>
+                <Setter Property="WidthRequest" Value="450"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Black}"
+                                         Dark="{StaticResource Flourecnt_Vendereti}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <!--Estilo Entradas Contraseñas-->
+            <Style TargetType="Entry" x:Key="Password">
+                <Setter Property="Placeholder" Value="Password..."/>
+                <Setter Property="WidthRequest" Value="440"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="IsPassword" Value="True"/>
+                <Setter Property="ClearButtonVisibility" Value="WhileEditing"/>
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Black}"
+                                         Dark="{StaticResource Flourecnt_Vendereti}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--Estilo Botones Generales-->
+            <Style TargetType="Button" x:Key="Buttons">
+                <Setter Property="BackgroundColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Pine_Vendereti}"
+                                         Dark="{StaticResource Gray900}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="BorderWidth" Value="1.2"/>
+                <Setter Property="BorderColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Gray200Brush}"
+                                         Dark="{StaticResource Gray600}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightGray" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--Estilo Botones Flotantes-->
+            <Style TargetType="Button" x:Key="EntryBttns">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderWidth" Value="0"/>
+                <Setter Property="TextColor">
+                    <Setter.Value>
+                        <AppThemeBinding Light="{StaticResource Pine_Vendereti}"
+                                         Dark="{StaticResource Flourecnt_Vendereti}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightGray" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Padding="30,0"
+                             Spacing="25">
+
+            <Image
+                Style="{StaticResource Icon}"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Log IN" />
+
+            <Label
+                Text="Who are you?"
+                Style="{StaticResource Titles}"
+                SemanticProperties.HeadingLevel="Level1" 
+                HorizontalOptions="Center"/>
+
+
+            <!--Campo de Usuario-->
+            <Label Style="{StaticResource Subtitles}"
+                   Text="User ->"/>
+
+            <Border Style="{StaticResource Entrys}">
+                <Grid WidthRequest="490"
+          HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <!-- Columna 0: Ocupa el espacio restante -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Columna 1: Tamaño automático -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Entry en la primera columna (columna 0) -->
+                    <Entry Style="{StaticResource User}"
+                           Grid.Column="0"
+                           x:Name="TextUserEntry"/>
+
+
+                    <!-- Botón en la segunda columna (columna 1) -->
+                    <Button Style="{StaticResource EntryBttns}" 
+                            x:Name="UserCheck"
+                            Text="❔"
+                            Grid.Column="1"
+                            IsEnabled="False"/>
+                </Grid>
+            </Border>
+
+
+            <!--Campo de contraseñas-->
+            <Label Style="{StaticResource Subtitles}"
+                   Text="Password ->"/>
+
+            <Border Style="{StaticResource Entrys}">
+                <Grid WidthRequest="490"
+                      HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <!-- Columna 0: Ocupa el espacio restante -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Columna 1: Tamaño automático -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Entry en la primera columna (columna 0) -->
+                    <Entry Style="{StaticResource Password}"
+                           Grid.Column="0"
+                           x:Name="PasswordEntry"/>
+
+
+                    <!-- Botón en la segunda columna (columna 1) -->
+                    <Button Style="{StaticResource EntryBttns}" 
+                            x:Name="TogglePasswordButton"                            
+                            Text="👁"
+                            Grid.Column="1"/>
+                </Grid>
+            </Border>
+
+            <Label
+                x:Name="Text_Warnings"
+                Style="{StaticResource Warnings}"
+                Text="Contraseña Incorrecta . . ."
+                IsVisible="False"                
+                />
+
+            <Grid WidthRequest="490"
+                  HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Style="{StaticResource Buttons}"
+                    x:Name="LogIn_Bttn"
+                    Text="LOGIN "                                         
+                    HorizontalOptions="Fill"
+                    IsEnabled="False"
+                    Grid.Column="0"/>
+                <Button
+                    Style="{StaticResource Buttons}"
+                    x:Name="SingUp_Bttn"
+                    Text="SingUp"
+                    WidthRequest="245"
+                    BackgroundColor="{StaticResource CyberGreen}"
+                    Grid.Column="1"
+                    />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
