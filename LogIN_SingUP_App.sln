@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogIN_SingUP_App", "LogIN_SingUP_App.csproj", "{49DBBD6D-D2B8-4BAF-A17B-0BFEEF3E3407}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49DBBD6D-D2B8-4BAF-A17B-0BFEEF3E3407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49DBBD6D-D2B8-4BAF-A17B-0BFEEF3E3407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49DBBD6D-D2B8-4BAF-A17B-0BFEEF3E3407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49DBBD6D-D2B8-4BAF-A17B-0BFEEF3E3407}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90747B90-A86C-4D05-BA5D-821070C928B7}
+	EndGlobalSection
+EndGlobal
