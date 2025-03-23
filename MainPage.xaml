@@ -273,8 +273,7 @@
                 <Button
                     Style="{StaticResource Buttons}"
                     x:Name="LogIn_Bttn"
-                    Text="LOGIN " 
-                    SemanticProperties.Hint="Counts the number of times you click"
+                    Text="LOGIN "                     
                     Clicked="OnLogInClicked"
                     HorizontalOptions="Fill"
                     IsEnabled="False"
@@ -283,6 +282,7 @@
                     Style="{StaticResource Buttons}"
                     x:Name="SingUp_Bttn"
                     Text="SingUp"
+                    Clicked="OnSingUpCliked"
                     WidthRequest="245"
                     BackgroundColor="{StaticResource CyberGreen}"
                     Grid.Column="1"

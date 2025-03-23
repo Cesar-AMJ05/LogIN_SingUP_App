@@ -1,4 +1,6 @@
-﻿namespace LogIN_SingUP_App
+﻿using Microsoft.Maui;
+
+namespace LogIN_SingUP_App
 {
     public partial class MainPage : ContentPage
     {
@@ -63,6 +65,11 @@
                 TogglePasswordButton.Text = PasswordEntry.IsPassword ? "👁" : "👁‍🗨";
                 PasswordEntry.Focus();
             }
+        }
+
+        private async void OnSingUpCliked(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new SingUp_Page());
         }
     }
 
