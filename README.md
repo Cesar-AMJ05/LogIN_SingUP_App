@@ -9,6 +9,7 @@ Para la tarea diabolica del mas idolatrado XD, se realizo un Login y Singup en .
 - Botones de Login y Singup
   - Login : Te redirige a una nueva ventana sorptesa 🥶
   - SingUp: Te redirige a la ventana de signup   
+![Ventana Login](/Evidencias/evidencia00.png)
 
 ## Sing Up
 - La pantalla contiene una imagen
@@ -21,5 +22,6 @@ Para la tarea diabolica del mas idolatrado XD, se realizo un Login y Singup en .
     - Minimoi un caracter especial
   - Confirmar contraseña
     - Verifica que la contraseña ingresada sea la misma
+![Ventana Singup](/Evidencias/evidencia01.png)
 
 Tanto la ventana de Login como de Singup tienen un manejo dinamico 😉.
