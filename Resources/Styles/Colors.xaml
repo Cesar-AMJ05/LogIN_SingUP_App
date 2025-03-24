@@ -18,6 +18,7 @@
     <Color x:Key ="Pine_Vendereti">#003C30</Color>
     <Color x:Key ="Flourecnt_Vendereti">#EFFE3F</Color>
     <Color x:Key="CyberGreen">#01C38E</Color>
+    <Color x:Key="CyberReed">#ec3223</Color>
 
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>

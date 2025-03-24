@@ -35,8 +35,8 @@
             <Style TargetType="Label" x:Key="Warnings">
                 <Setter Property="TextColor">
                     <Setter.Value>
-                        <AppThemeBinding Light="{StaticResource Magenta}"
-                                         Dark="{StaticResource Flourecnt_Vendereti}"/>
+                        <AppThemeBinding Light="{StaticResource CyberReed}"
+                                         Dark="{StaticResource CyberReed}"/>
                     </Setter.Value>
                 </Setter>
                 <Setter Property="HorizontalOptions" Value="Start"/>
